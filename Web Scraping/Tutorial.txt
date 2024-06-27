@@ -1,1 +1,22 @@
+Packages used:
+- python version: 3.10.12 
+- scrapy
+- beautifulsoup4
+
 How to run the code:
+1 - Open the terminal and run "scrapy startproject 'crawlerName' " to create a folder named 'crawlerName', all necessary files will be created in the directory.
+
+2 - Find "/'crawlerName'/'crawlerName'/spider/" and add the .py code for how your spider crawler will work. Ours is the "w3s scraper.py".
+Note: in "/'crawlerName'/'crawlerName'/" you will find some extra files for settings that change how the crawler will behave while scraping. They werent modified for our process.
+
+3 - Refering to our code, insert the list of URL's desired on the "start_urls" array.
+
+4 - To execute the program, go back to "/'crawlerName'/'crawlerName'/" in your terminal.
+Note: before scraping data, it's possible to run tests on 'scrapy shell', like in the example shown below:
+
+> scrapy shell
+> fetch('Test URL')
+> response.css('#main h2').getall()
+> response.css('#main h2::text').getall()
+
+5 - Run "scrapy crawl 'crawlerName' -O output.json" and scrapy will print a report of the operations and a output.json file will be created, containing the data wanted.
